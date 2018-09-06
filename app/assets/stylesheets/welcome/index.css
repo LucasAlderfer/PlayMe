@@ -1,0 +1,12 @@
+.welcome_page {
+  position: fixed;
+  border-top: 28vh;
+  margin-left: 25vw;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome_page h1 {
+  align-self: center;
+}
