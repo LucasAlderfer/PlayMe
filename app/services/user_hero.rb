@@ -8,7 +8,7 @@ class UserHero
 
   def win_loss
     loss = @hero['games'] - @hero['win']
-    "#{@hero['win']} - #{loss} over #{@hero['games']} total games."
+    "#{@hero['win']} wins and #{loss} losses over #{@hero['games']} total games."
   end
 
   def last_played

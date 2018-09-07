@@ -1,0 +1,8 @@
+<main>
+  <p>Recent Games for <%= @recent_games.name %></p>
+  <ul>
+    <% @recent_games.games.each do |game| %>
+      <li><%= game %></li>
+    <% end %>
+  </ul>
+</main>

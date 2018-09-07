@@ -3,6 +3,14 @@
   <img src=<%= @steam_user.avatar %>>
   <p>Steam Id: <%= @steam_user.steam_id %><p>
   <p>Currently Playing As: <%= @steam_user.persona %></p>
+  <%= link_to 'Recent Games', user_recent_games_path(current_user) %>
   <p>Rank Tier: <%= @steam_user.rank_tier %></p>
   <p>MMR Estimate: <%= @steam_user.mmr %></p>
+
+  <div class='heroes'>
+    <% @steam_user.heroes.each do |hero| %>
+      <img src="https://api.opendota.com<%= hero[0][1] %>">
+      <p>Hero: <%= hero[0][0] %> -- <%= hero[1] %> -- Last Played: <%= hero[2] %></p>
+    <% end %>
+  </div>
 </main>
