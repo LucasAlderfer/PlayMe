@@ -1,5 +1,4 @@
 main {
-  position: fixed;
   border-top: 28vh;
   margin-left: 25vw;
   width: 70vw;
@@ -14,4 +13,9 @@ main h2 {
 main img {
   width: 5vw;
   height: 5vh;
+}
+
+.heroes img {
+  height: 5vh;
+  width: 3vw;
 }
