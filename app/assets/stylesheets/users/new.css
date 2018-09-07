@@ -1,0 +1,7 @@
+.new_user {
+  position: fixed;
+  border-top: 28vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
