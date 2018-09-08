@@ -2,7 +2,15 @@
   <p>Recent Games for <%= @recent_games.name %></p>
   <ul>
     <% @recent_games.games.each do |game| %>
-      <li><%= game %></li>
+      <h1>Match: <%= game.id %> at <%= Time.at(game.time).to_datetime %>
+      <h2>Radiant</h2>
+      <% game.players[:radiant].each do |player| %>
+        <li><%= player.name %></li>
+      <% end %>
+      <h2>Dire</h2>
+      <% game.players[:dire].each do |player| %>
+        <li><%= player.name %></li>
+      <% end %>
     <% end %>
   </ul>
 </main>
