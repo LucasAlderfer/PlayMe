@@ -2,15 +2,25 @@ class RecentGamesPresenter
   attr_reader :name
 
   def initialize(user)
+    @steam_id = user.steam_id
     @id = user.id
     @name = user.name
   end
 
   def games
-    recent_game_ids
+    make_games
   end
 
+
   private
+
+  def make_games
+    ids = recent_game_ids
+    ids.map do |id|
+      game = request("/api/matches/#{id}")
+      UserGame.new(game)
+    end
+  end
 
   def recent_game_ids
     games = get_recent_games
@@ -20,7 +30,7 @@ class RecentGamesPresenter
   end
 
   def get_recent_games
-    request("/api/players/#{id_32}/recentMatches")
+    request("/api/players/#{id_32}/matches?limit=10")
   end
 
   def id_32
