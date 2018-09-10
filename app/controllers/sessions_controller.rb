@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         redirect_to '/'
       end
     else
-      session[:user_id] = params[:format]
+      session[:user_id] = params[:id]
     end
     redirect_to user_path(current_user)
   end

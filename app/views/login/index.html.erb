@@ -1,5 +1,5 @@
 <main class='login'>
-  <%= form_with(url: '/sessions', method: 'get') do %>
+  <%= form_with(url: '/sessions', method: :post) do %>
     <%= email_field_tag(:email) %>
 
     <%= password_field_tag(:password) %>
