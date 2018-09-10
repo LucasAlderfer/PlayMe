@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     if params[:password] == params[:password_confirmation]
       user = User.new(user_params)
       if user.save!
-        redirect_to sessions_path(user)
+        session[:user_id] = user.id
+        redirect_to user_path(current_user)
       else
         flash[:error] = 'New user not created, please try again!'
         render :new
