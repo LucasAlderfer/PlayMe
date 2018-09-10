@@ -1,0 +1,22 @@
+<h2>Current Hero Stats</h2>
+<main class='all-heroes'>
+  <ul>
+    <% @heroes.each do |hero| %>
+      <li><img src=<%= hero.icon %>> <h3><%= hero.name %></h3></li>
+      <li><p>Attribute: <%= hero.attr %></p></li>
+      <li><p>Attack Type: <%= hero.range %></p></li>
+      <li><p>Hero Id: <%= hero.hero_id %></p></li>
+      <li><p>Pro Stats: <%= hero.pro_pick %> picks and <%= hero.pro_win %> wins, banned <%= hero.pro_ban %> times.</p></li>
+      <li>
+        <p>Pub Pick Breakdown:<p>
+        <ul class='pick-breakdown'>
+          <li><p>Picked first <%= hero.first_pick_percent %>% of the time, with a <%= hero.first_win_percent %>% win rate</p></li>
+          <li><p>Picked second <%= hero.second_pick_percent %>% of the time, with a <%= hero.second_win_percent %>% win rate</p></li>
+          <li><p>Picked third <%= hero.third_pick_percent %>% of the time, with a <%= hero.third_win_percent %>% win rate</p></li>
+          <li><p>Picked fourth <%= hero.fourth_pick_percent %>% of the time, with a <%= hero.fourth_win_percent %>% win rate</p></li>
+          <li><p>Picked fifth <%= hero.fifth_pick_percent %>% of the time, with a <%= hero.fifth_win_percent %>% win rate</p></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</main>

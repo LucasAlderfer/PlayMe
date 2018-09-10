@@ -2,6 +2,9 @@ class CreateHeros < ActiveRecord::Migration[5.1]
   def change
     create_table :heros do |t|
       t.string :name
+      t.string :icon
+      t.string :attr
+      t.string :range
       t.integer :hero_id
       t.integer :pro_pick
       t.integer :pro_win

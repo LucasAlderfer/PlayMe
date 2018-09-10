@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20180909030649) do
 
   create_table "heros", force: :cascade do |t|
     t.string "name"
+    t.string "icon"
+    t.string "attr"
+    t.string "range"
     t.integer "hero_id"
     t.integer "pro_pick"
     t.integer "pro_win"
