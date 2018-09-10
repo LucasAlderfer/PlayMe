@@ -1,0 +1,16 @@
+main {
+  border-top: 28vh;
+  margin-left: 25vw;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-heroes ul{
+  list-style-type: none;
+}
+
+.all-heroes img {
+  height: 7vh;
+  width: 5vw;
+}

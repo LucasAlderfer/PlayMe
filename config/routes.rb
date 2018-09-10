@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :new, :show] do
     get '/recent_games', to: 'recent_games#show'
   end
-  get '/sessions', to: 'sessions#create'
+  resources :sessions, only: [:create, :destroy]
 end
