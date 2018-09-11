@@ -2,21 +2,23 @@ require 'rails_helper'
 
 describe 'visiting /' do
   context 'as a visitor' do
-    it 'can login' do
-      user = User.create!(name: 'Billy', steam_id: '76561198053222027', email: 'test', password: 'password')
+    it 'can login or create account through steam' do
+      allow_any_instance_of(SteamUserPresenter).to receive(:get_persona).and_return('Boss')
+      allow_any_instance_of(SteamUserPresenter).to receive(:get_rank_tier).and_return('Amazing')
+      allow_any_instance_of(SteamUserPresenter).to receive(:get_mmr).and_return('10K')
+      allow_any_instance_of(SteamUserPresenter).to receive(:get_avatar).and_return('http://placekitten.com/200/300')
+      stub_steam_auth
+
       visit '/'
 
       click_on 'Login'
 
-      expect(current_path).to eq(login_path)
-
-      within('.login') do
-        fill_in :email, with: user.email
-        fill_in :password, with: user.password
-        click_on 'Login'
-      end
-
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq('/users/1')
+      expect(page).to have_content("Steam Id: 123545")
+      expect(page).to have_content("Welcome Billy")
+      expect(page).to have_content("Rank Tier: Amazing")
+      expect(page).to have_content("MMR Estimate: 10K")
+      expect(page).to have_content("Currently Playing As: Boss")
     end
   end
 end

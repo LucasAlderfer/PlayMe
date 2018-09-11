@@ -8,6 +8,13 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'database_cleaner'
+OmniAuth.config.test_mode = true
+def stub_steam_auth
+  OmniAuth.config.mock_auth[:default] = OmniAuth::AuthHash.new({
+    :uid => '123545',
+    :info => { :nickname => 'Billy' }
+  })
+end
 DatabaseCleaner.strategy = :truncation
 # Add additional requires below this line. Rails is not loaded until this point!
 

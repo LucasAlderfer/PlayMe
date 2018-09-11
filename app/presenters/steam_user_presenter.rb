@@ -4,7 +4,7 @@ class SteamUserPresenter
   def initialize(user)
     @id = user.id
     @name = user.name
-    @steam_id = user.steam_id
+    @steam_id = user.uid
     @persona = get_persona
     @rank_tier = get_rank_tier
     @mmr = get_mmr
