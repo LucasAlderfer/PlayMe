@@ -5,6 +5,7 @@ class CreateHeros < ActiveRecord::Migration[5.1]
       t.string :icon
       t.string :attr
       t.string :range
+      t.json :metrics, default: {}
       t.integer :hero_id, default: 0
       t.integer :pro_pick, default: 0
       t.integer :pro_win, default: 0

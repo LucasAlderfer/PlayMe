@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     get '/recent_games', to: 'recent_games#show'
   end
   resources :sessions, only: [:create, :destroy]
+  get '/hero-matchups', to: 'matchups#index'
 end
