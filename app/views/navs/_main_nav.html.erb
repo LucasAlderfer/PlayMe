@@ -3,14 +3,14 @@
     <li><img src='http://placekitten.com/400/75' /></li>
     <li><p>A tool for enhancing the hero selection process in Dota2... for better or worse</p></li>
     <% unless current_user %>
-      <li><%= link_to 'Login', login_path %></li>
+      <li><%= link_to 'Login', '/auth/steam' %></li>
     <% else %>
-      <li><%= link_to 'Home', user_path(current_user) %></li>
+      <li><%= link_to 'Logout', logout_path %></li>
     <% end %>
     <% unless current_user %>
-      <li><%= link_to "Sign Up!", new_user_path %></li>
+      <li><%= link_to "Home", root_path %></li>
     <% else %>
-      <li><%= link_to 'Sign Out!', session_path(current_user), method: :delete %></li>
+      <li><%= link_to 'Home', user_path(current_user) %></li>
     <% end %>
     <li>
       <input type='text' placeholder="Search">

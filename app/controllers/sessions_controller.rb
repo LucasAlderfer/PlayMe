@@ -1,18 +1,12 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :create
 
   def create
-    if params[:commit] == 'Login'
-      user = User.find_by(email: params[:email])
-      if user.authenticate(params[:password])
-        session[:user_id] = user.id
-      else
-        flash[:error] = 'Login was unsuccessful!'
-        redirect_to '/'
-      end
-    else
-      session[:user_id] = params[:id]
-    end
-    redirect_to user_path(current_user)
+    auth = request.env['omniauth.auth']
+    user = User.find_by_uid(auth['uid']) || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    flash[:notice] = "Signed In As #{user.name}"
+    redirect_to user_path(user)
   end
 
   def destroy

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe SteamUserPresenter do
   it 'can get information about a user based on their steam id' do
-    user = User.create!(name: 'test', email: 'testemail', steam_id: '76561198053222027', password: 'password')
+    user = User.create!(name: 'test', uid: '76561198053222027')
     steamuser = SteamUserPresenter.new(user)
 
     expect(steamuser).to respond_to(:name)
