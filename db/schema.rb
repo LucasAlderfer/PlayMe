@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180911004453) do
   end
 
   create_table "matchups", force: :cascade do |t|
-    t.text "array", default: [], array: true
+    t.json "array"
   end
 
   create_table "users", force: :cascade do |t|

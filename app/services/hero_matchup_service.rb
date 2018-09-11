@@ -4,7 +4,7 @@ class HeroMatchupService
     format_matchups
   end
 
-  private
+  # private
 
   def conn
     Faraday.new(url: "https://api.opendota.com")
@@ -22,16 +22,17 @@ class HeroMatchupService
     matchup_array = []
     hero_ids = Hero.pluck(:hero_id).sort
     hero_ids.each do |id|
-      hero_hash = {}
+      hero_array = []
       hero = Hero.find_by(hero_id: id)
-      hero_hash['hero'] = [hero.icon, hero.name]
+      hero_array << ['hero', [hero.icon, hero.name]]
       body = get_hero_matchups(id)
       body.each do |matchup|
-        hero_hash[matchup['hero_id']] = (((matchup['wins']).to_f) / matchup['games_played'])
+        hero_array << [matchup['hero_id'], ((((matchup['wins']).to_f) / matchup['games_played']) * 100).round(2)]
       end
-      matchup_array << hero_hash
+      matchup_array << hero_array
       sleep(1.5)
     end
+    matchup_array
   end
 
 end
