@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180909030649) do
+ActiveRecord::Schema.define(version: 20180911004453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180909030649) do
     t.string "icon"
     t.string "attr"
     t.string "range"
+    t.json "metrics", default: {}
     t.integer "hero_id", default: 0
     t.integer "pro_pick", default: 0
     t.integer "pro_win", default: 0
@@ -34,6 +35,10 @@ ActiveRecord::Schema.define(version: 20180909030649) do
     t.integer "four_win", default: 0
     t.integer "five_pick", default: 0
     t.integer "five_win", default: 0
+  end
+
+  create_table "matchups", force: :cascade do |t|
+    t.text "array", default: [], array: true
   end
 
   create_table "users", force: :cascade do |t|

@@ -44,4 +44,8 @@ class Hero < ApplicationRecord
     one_pick + two_pick + three_pick + four_pick + five_pick
   end
 
+  def total_pro_participation
+    pro_pick + pro_ban
+  end
+
 end

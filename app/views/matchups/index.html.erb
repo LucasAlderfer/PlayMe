@@ -1,0 +1,18 @@
+<h2>Hero Matchups</h2>
+<table>
+  <thead><th>Hero</th><th>Opponents</th>
+  <tbody>
+    <% @hero_matchups.each do |matchups| %>
+    <div class='hero'>
+    <tr>
+      <td><img src=<%= matchups['hero'][1] %>><h3><%= matchups['hero'][0] %></h3></td>
+      <% opponents = (1..116).to_a %>
+      <% opponents.each do |opponent| %>
+        <% hero = Hero.find_by(hero_id: opponent) %>
+        <td><img src=<%= hero.icon %>><p><%= hero.name %>: <%= matchups[opponent] %></p></td>
+      <% end %>
+    </tr>
+    </div>
+    <% end %>
+  </tbody>
+</table>
