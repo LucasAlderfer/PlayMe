@@ -1,8 +1,16 @@
 class HeroMatchupService
 
-  def info
-    format_matchups
-  end
+  # def info
+  #   format_matchups
+  # end
+
+  # def update_heroes
+  #   format_matchups.each do |matchups|
+  #     hash = matchups.to_h
+  #     hero = Hero.find_by(name: matchups['hero'][1])
+  #     hero_ids = Hero.pluck(:hero_id).delete(hero.id)
+  #     hero.update(metrics: )
+  # end
 
   # private
 
@@ -18,21 +26,18 @@ class HeroMatchupService
     request("/api/heroes/#{id}/matchups")
   end
 
-  def format_matchups
-    matchup_array = []
+  def update_heroes
     hero_ids = Hero.pluck(:hero_id).sort
     hero_ids.each do |id|
-      hero_array = []
+      hero_hash = {}
       hero = Hero.find_by(hero_id: id)
-      hero_array << ['hero', [hero.icon, hero.name]]
       body = get_hero_matchups(id)
       body.each do |matchup|
-        hero_array << [matchup['hero_id'], ((((matchup['wins']).to_f) / matchup['games_played']) * 100).round(2)]
+        hero_hash[matchup['hero_id']] = ((((matchup['wins']).to_f) / matchup['games_played']) * 100).round(2)
       end
-      matchup_array << hero_array
+      hero.update!(metrics: hero_hash)
       sleep(1.5)
     end
-    matchup_array
   end
 
 end
