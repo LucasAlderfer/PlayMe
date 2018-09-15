@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20180911004453) do
   create_table "heros", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.string "attr"
-    t.string "range"
+    t.string "image"
+    t.string "roles", array: true
+    t.integer "default_score", default: 0
     t.json "metrics", default: {}
     t.integer "hero_id", default: 0
     t.integer "pro_pick", default: 0

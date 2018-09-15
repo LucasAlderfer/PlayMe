@@ -5,9 +5,9 @@ class HeroCreationService
     hero_array.each do |hero|
       hero_id = hero['id']
       icon = 'https://api.opendota.com' + hero['icon']
+      image = 'https://api.opendota.com' + hero['img']
       name = hero['localized_name']
-      attribute = hero['primary_attr']
-      range = hero['attack_type']
+      roles = hero['roles']
       pro_pick = hero['pro_pick']
       pro_win = hero['pro_win']
       pro_ban = hero['pro_ban']
@@ -22,7 +22,7 @@ class HeroCreationService
       five_pick = hero['5_pick']
       five_win = hero['5_win']
       if Hero.find_by(hero_id: hero_id).nil?
-        hero = Hero.create(hero_id: hero_id, name: name, attr: attribute, range: range, icon: icon, pro_pick: pro_pick, pro_win: pro_win, pro_ban: pro_ban, one_pick: one_pick, one_win: one_win, two_pick: two_pick, two_win: two_win, three_pick: three_pick, three_win: three_win, four_pick: four_pick, four_win: four_win, five_pick: five_pick, five_win: five_win)
+        hero = Hero.create(hero_id: hero_id, name: name, image: image, roles: roles, icon: icon, pro_pick: pro_pick, pro_win: pro_win, pro_ban: pro_ban, one_pick: one_pick, one_win: one_win, two_pick: two_pick, two_win: two_win, three_pick: three_pick, three_win: three_win, four_pick: four_pick, four_win: four_win, five_pick: five_pick, five_win: five_win)
         hero.update(pro_pick: 0) if hero.pro_pick == nil
         hero.update(pro_win: 0) if hero.pro_win == nil
         hero.update(pro_ban: 0) if hero.pro_ban == nil

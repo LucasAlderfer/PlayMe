@@ -3,8 +3,9 @@ class CreateHeros < ActiveRecord::Migration[5.1]
     create_table :heros do |t|
       t.string :name
       t.string :icon
-      t.string :attr
-      t.string :range
+      t.string :image
+      t.string :roles, array: true
+      t.integer :default_score, default: 0
       t.json :metrics, default: {}
       t.integer :hero_id, default: 0
       t.integer :pro_pick, default: 0

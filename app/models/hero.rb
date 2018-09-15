@@ -44,6 +44,10 @@ class Hero < ApplicationRecord
     one_pick + two_pick + three_pick + four_pick + five_pick
   end
 
+  def win_rate
+    (((one_win + two_win + three_win + four_win + five_win) / total_picks) * 100).round(2)
+  end
+
   def total_pro_participation
     pro_pick + pro_ban
   end

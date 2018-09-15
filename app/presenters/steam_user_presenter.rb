@@ -33,18 +33,21 @@ class SteamUserPresenter
   private
 
   def hero_stats
-    name_array = hero_names
-    arrays = []
-    make_user_heroes.each do |hero|
-      hero_name = ''
-      name_array.each do |name|
-        if name.keys.include?(hero.id.to_i)
-          hero_name = name[hero.id.to_i]
-        end
-      end
-      arrays << [hero_name, hero.win_loss, hero.last_played]
+    # name_array = hero_names
+    # arrays = []
+    make_user_heroes.inject({}) do |hash, hero|
+      binding.pry
+      current_hero = Hero.find_by(hero_id: hero.id.to_i)
     end
-    arrays
+    #   hero_name = ''
+    #   name_array.each do |name|
+    #     if name.keys.include?(hero.id.to_i)
+    #       hero_name = name[hero.id.to_i]
+    #     end
+    #   end
+    #   arrays << [hero_name, hero.win_loss, hero.last_played]
+    # end
+    # arrays
   end
 
   def hero_names
