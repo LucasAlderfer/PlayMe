@@ -30,15 +30,77 @@ class SteamUserPresenter
     hero_stats
   end
 
+  def top_heroes
+    top = hero_stats.sort_by { |hero_id, score| score }.reverse[0..9]
+    ids = top.map do |hero|
+      hero[0]
+    end
+    heroes = ids.map do |id|
+      Hero.find_by(hero_id: id)
+    end
+    heroes
+  end
+
   private
+
+  def user_experience_scores
+    #need to normalize the win_rate and games from each user_hero so that the values can be assigned scores, so that the scores can be made when iterating over them.
+    user_heroes = []
+    heroes = make_user_heroes.reverse
+    points = 0
+    12.times {
+      hero_group = heroes.shift(5)
+      hero_group.each do |hero|
+        hero.score += points
+        user_heroes << hero
+      end
+      points += 1
+    }
+    14.times {
+      hero_group = heroes.shift(4)
+      hero_group.each do |hero|
+        hero.score += points
+        user_heroes << hero
+      end
+      points += 1
+    }
+    user_heroes
+  end
+
+  def user_win_rate_scores
+    user_heroes = []
+    heroes = user_experience_scores
+    sorted_heroes = heroes.sort_by { |hero| hero.win_rate }
+    points = 0
+    12.times {
+      hero_group = sorted_heroes.shift(5)
+      hero_group.each do |hero|
+        hero.score += points
+        user_heroes << hero
+      end
+      points += 1
+    }
+    14.times {
+      hero_group = sorted_heroes.shift(4)
+      hero_group.each do |hero|
+        hero.score += points
+        user_heroes << hero
+      end
+      points += 1
+    }
+    user_heroes
+  end
 
   def hero_stats
     # name_array = hero_names
     # arrays = []
-    make_user_heroes.inject({}) do |hash, hero|
-      binding.pry
+    heroes = user_win_rate_scores
+    stats = heroes.inject({}) do |hash, hero|
       current_hero = Hero.find_by(hero_id: hero.id.to_i)
+      hash[current_hero.hero_id] = (current_hero.default_score + hero.score)
+      hash
     end
+    stats
     #   hero_name = ''
     #   name_array.each do |name|
     #     if name.keys.include?(hero.id.to_i)

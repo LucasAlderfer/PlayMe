@@ -1,14 +1,20 @@
 class UserHero
   attr_reader :id, :hero, :games
+  attr_accessor :score
 
   def initialize(hero)
     @id = hero['hero_id']
     @hero = hero
     @games = hero['games']
+    @score = 0
   end
 
   def win_rate
-    (((@hero['win']).to_f/@hero['games']) * 100).round(2)
+    unless @games == 0
+      (((@hero['win']).to_f/@hero['games']) * 100).round(2)
+    else
+      0
+    end
   end
 
   def win_loss

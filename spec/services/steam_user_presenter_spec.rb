@@ -12,5 +12,8 @@ describe SteamUserPresenter do
     expect(steamuser).to respond_to(:persona)
     expect(steamuser).to respond_to(:rank_tier)
     expect(steamuser).to respond_to(:mmr)
+    expect(steamuser).to respond_to(:heroes)
+    expect(steamuser.heroes.class).to eq(Hash)
+    expect(steamuser.heroes.count).to eq(116)
   end
 end
