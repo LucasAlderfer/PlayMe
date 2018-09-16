@@ -1,5 +1,7 @@
 <main class='welcome_page'>
-  <h1>Welcome to PlayMe!</h1>
-  <p>PlayMe is a tool to enhance the pick selection process, or enable more educate critiques of picks that have already occured.</p>
-  <p>PlayMe can either be used to analyze your Dota2 match history to give some suggestions of heros you may find fun in the current game, or can analyze performances of team mates in one of your recent games and reinforce your knowledge that their pick was bad.</p>
+  <h1>Welcome to Pick-Me!</h1>
+  <p>Pick-Me is a tool to enhance the pick selection process in the game of Dota2 by allowing users to have heroes suggested to them.</p>
+  <p>Pick-Me will give users 3 prospective picks: one purely stat based, incorporating the users statistics, overall statistics, and professional statistics; one purely random, with the ability to remove certain heroes from the queue with user settings; and one 'fun' pick, which randomly selects a hero from a pool comprised of those that the user has the most experience and highest win rate with.</p>
+  <p>To get started, click below to log into your Steam account, Pick-Me will only access your Dota2 statistics.</p>
+  <%= link_to image_tag('/assets/steamIcon.png'), '/auth/steam' %>
 </main>
