@@ -1,0 +1,63 @@
+<%= render partial: 'navs/main_nav' %>
+
+<div class='settings'>
+  <div class='fun-settings'>
+    <h1>Set Heroes to Include in the Fun Hero Selection</h1>
+    <h3>Current Fun Heroes Include</h3>
+    <div class='current-fun-settings'>
+      <% @fun_heroes = Hero.where(hero_id: current_user.fun_settings) %>
+      <ul>
+        <% @fun_heroes.each do |hero| %>
+          <li><img src=<%= hero.icon %>>
+              <p><%= hero.name %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <h3>Select New Fun Hero Pool</h3>
+    <div class='new-fun-settings'>
+      <%= form_for @user do |f| %>
+        <% heroes = Hero.all %>
+        <ul>
+          <% heroes.each do |hero| %>
+            <li><%= hero.name %>
+                <%= f.check_box :fun_settings, { multiple: true }, hero.hero_id %>
+            </li>
+          <% end %>
+        </ul>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='random-settings'>
+    <h1>Set Heroes to Remove from the Random Hero Selection</h1>
+    <h3>Currently Unincluded Heroes Include</h3>
+    <div class='current-random-settings'>
+      <% @random_heroes = Hero.where(hero_id: current_user.random_settings) %>
+      <ul>
+        <% @random_heroes.each do |hero| %>
+          <li><img src=<%= hero.icon %>>
+              <p><%= hero.name %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <h3>Select New Unincluded Heroes</h3>
+    <div class='new-random-settings'>
+      <%= form_for @user do |f| %>
+        <% heroes = Hero.all %>
+        <ul>
+          <% heroes.each do |hero| %>
+            <li><%= hero.name %>
+                <%= f.check_box :random_settings, { multiple: true }, hero.hero_id %>
+            </li>
+          <% end %>
+        </ul>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</main>

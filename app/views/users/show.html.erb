@@ -1,3 +1,4 @@
+<%= render partial: 'navs/main_nav'%>
 <main>
   <h2>Welcome <%= @steam_user.name %>!</h2>
   <img src=<%= @steam_user.avatar %>>
@@ -7,8 +8,20 @@
   <p>MMR Estimate: <%= @steam_user.mmr %></p>
 
   <div class='heroes'>
-    <% @hero = @steam_user.top_heroes.sample %>
-    <h1>Stat Pick: <%= @hero.name %></h1>
-    <img src=<%= @hero.image %>>
+    <div class='stat-pick'>
+      <% @hero = @steam_user.top_heroes.sample %>
+      <h1>Stat Pick: <%= @hero.name %></h1>
+      <img src=<%= @hero.image %>>
+    </div>
+    <div class='fun-pick'>
+      <% @fun_hero = @steam_user.fun_heroes.sample %>
+      <h1>Fun Pick: <%= @fun_hero.name %></h1>
+      <img src=<%= @fun_hero.image %>>
+    </div>
+    <div class='random-pick'>
+      <% @random_hero = @steam_user.random_heroes.sample %>
+      <h1>Random Pick: <%= @random_hero.name %></h1>
+      <img src=<%= @random_hero.image %>>
+    </div>
   </div>
 </main>

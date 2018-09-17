@@ -1,19 +1,6 @@
 <nav class='main_nav' %>
-  <ul>
-    <li><img src='http://placekitten.com/400/75' /></li>
-    <li><p>A tool for enhancing the hero selection process in Dota2... for better or worse</p></li>
-    <% unless current_user %>
-      <li><%= link_to 'Login', '/auth/steam' %></li>
-    <% else %>
-      <li><%= link_to 'Logout', logout_path %></li>
-    <% end %>
-    <% unless current_user %>
-      <li><%= link_to "Home", root_path %></li>
-    <% else %>
-      <li><%= link_to 'Home', user_path(current_user) %></li>
-    <% end %>
-    <li>
-      <input type='text' placeholder="Search">
-    </li>
-  </ul>
+  <%= link_to 'Home', user_path(current_user) %>
+  <%= link_to 'Explanations', explanations_path %>
+  <%= link_to 'Settings', user_settings_path(current_user) %>
+  <%= link_to 'Logout', logout_path %>
 </nav>

@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   resources :heros, only: [:create, :index]
 
-  resources :users, only: [:create, :new, :show] do
+  resources :users, only: [:create, :new, :show, :update] do
     get '/recent_games', to: 'recent_games#show'
+    get '/settings', to: 'settings#show'
   end
+  get '/explanations', to: 'explanations#show'
   get '/hero-matchups', to: 'matchups#index'
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/:provider/callback', to: 'sessions#create'

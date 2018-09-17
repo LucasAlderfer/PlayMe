@@ -1,8 +1,8 @@
 .main_nav {
-  height: 15vh;
+  height: 10vh;
 }
 
-.main_nav ul {
+.main_nav {
   display: flex;
   flex-direction: row;
   list-style-type: none;
@@ -11,28 +11,16 @@
   padding: 0px;
 }
 
-.main_nav li {
-  border-width: thin;
-  border-style: solid;
-  border-color: black;
+.main_nav a {
+  color: black;
+  text-decoration: none;
+  width: 25vw;
+  height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  font-size: 3vh;
 }
 
-.main_nav img {
-  width: 33vw;
-}
-
-.main_nav p {
-  border-left: 300px;
-}
-
-.main_metrics {
-  width: 11vw;
-}
-
-.login {
-  width: 11vw;
-}
-
-.main_nav input {
-  width: 12vw;
+.main_nav a:hover {
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
 }
