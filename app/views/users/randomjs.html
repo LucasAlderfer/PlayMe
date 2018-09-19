@@ -30,10 +30,10 @@
   var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: <%= escape_javascript "#{@steam_user.top_heroes_names}" %>,
+          labels: <%= @steam_user.top_heroes_names.to_json %>,
           datasets: [{
               label: 'Scores',
-              data: <%= escape_javascript "#{@steam_user.top_heroes_scores}" %>,
+              data: <%= @steam_user.top_heroes_scores.to_json %>,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
@@ -64,3 +64,35 @@
       }
   });
 </script>
+
+
+<%= column_chart api_v1_matchup_path(@hero) %>
+
+
+<div id="chart" style="width: auto; height: 600px;"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <%= javascript_tag do %>
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
+    var request = new XMLHttpRequest();
+
+    request.open('GET', 'https://hero-picker.herokuapp.com/api/v1/matchups/17', true);
+
+    request.onload = function () {
+      var data = JSON.parse(this.response);
+      }
+    }
+
+    function drawChart() {
+      data = [['Name', 'Score']].concat(data);
+      data = google.visualization.arrayToDataTable(data);
+      var options = {
+        chart: {
+          title: 'Scores by Hero',
+        }
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('chart'));
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  <% end %>
