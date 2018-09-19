@@ -36,7 +36,11 @@ gem 'chart-js-rails'
 gem 'chartkick'
 gem 'active_model_serializers', '0.10'
 gem 'newrelic_rpm'
-gem 'rails_12factor', group: :production
+
+
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
