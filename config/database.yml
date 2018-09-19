@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: PlayMe_production
-  username: PlayMe
-  password: <%= ENV['PLAYME_DATABASE_PASSWORD'] %>
