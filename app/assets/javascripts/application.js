@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require Chart.min
 //= require Chart.bundle
 //= require chartkick
 //= require rails-ujs
