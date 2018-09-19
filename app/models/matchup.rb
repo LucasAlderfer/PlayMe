@@ -1,4 +1,0 @@
-class Matchup < ApplicationRecord
-
-
-end

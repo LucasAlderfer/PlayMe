@@ -1,7 +1,13 @@
+body {
+  background-image: url('/assets/dota_2_white.jpg');
+  background-size: 100vw 100vh;
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
 .welcome_page {
   position: fixed;
-  border-top: 28vh;
-  margin-left: 25vw;
+  margin-top: 15vh;
+  margin-left: 15vw;
   width: 70vw;
   display: flex;
   flex-direction: column;
@@ -9,4 +15,15 @@
 
 .welcome_page h1 {
   align-self: center;
+}
+
+.welcome_page a {
+  align-self: center;
+  width: 300px;
+  height: 50px;
+}
+
+.welcome_page img {
+  width: 300px;
+  height: 50px;
 }

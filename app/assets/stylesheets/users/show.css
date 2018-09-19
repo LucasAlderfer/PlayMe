@@ -1,9 +1,16 @@
 main {
-  border-top: 28vh;
-  margin-left: 25vw;
-  width: 70vw;
+  margin-top: 5vh;
+  margin-left: 0;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+}
+
+.setup {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 main h2 {
@@ -12,10 +19,17 @@ main h2 {
 
 main img {
   width: 5vw;
-  height: 5vh;
+  height: 7vh;
 }
 
 .heroes img {
-  height: 5vh;
-  width: 3vw;
+  height: 10vh;
+  width: 7vw;
+}
+
+.heroes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }

@@ -1,0 +1,66 @@
+<script>
+  $(document).ready(function () {
+
+    var list = document.getElementById('teammates');
+
+    list.options = <%= escape_javascript Hero.all.pluck(:name).to_json %>;
+  })
+
+  const options = herolist.map((hero, i) => {
+    return <option id={i} onClick={swap}>{hero}</option>
+  })
+
+  $('.heroes').html(options);
+  function swap() {
+    $(this).append('some other list')
+    $(this).remove
+  }
+
+</script>
+
+<datalist class="heroes">
+<select id='teammates', size='10'>
+</select>
+<input id='1' type='text'>
+
+
+<div><canvas id="hero-stats" width="400" height="400"></canvas></div>
+<script>
+  var ctx = document.getElementById("#hero-stats").getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: <%= escape_javascript "#{@steam_user.top_heroes_names}" %>,
+          datasets: [{
+              label: 'Scores',
+              data: <%= escape_javascript "#{@steam_user.top_heroes_scores}" %>,
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+</script>

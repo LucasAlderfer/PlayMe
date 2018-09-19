@@ -30,6 +30,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faraday'
 gem 'figaro'
 gem 'omniauth-steam'
+gem 'jquery-rails'
+gem 'chartjs-ror'
+gem 'chart-js-rails'
+gem 'chartkick'
+gem 'active_model_serializers', '0.10'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
