@@ -69,7 +69,9 @@ class SteamUserPresenter
 
   def random_heroes
     pool = Hero.pluck(:hero_id)
-    pool.delete_if { |id| @random_settings.include?(id.to_s) }
+    unless @random_settings.nil?
+      pool.delete_if { |id| @random_settings.include?(id.to_s) }
+    end
     Hero.where(hero_id: pool)
   end
 

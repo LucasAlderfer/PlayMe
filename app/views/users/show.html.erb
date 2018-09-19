@@ -21,7 +21,7 @@
       <img src=<%= @hero.image %>>
     </div>
     <div class='fun-pick'>
-      <% unless @steam_user.fun_heroes.count == 0 %>
+      <% unless @steam_user.fun_heroes.count == 0 || @steam_user.fun_heroes.nil? %>
         <% @fun_hero = @steam_user.fun_heroes.sample %>
         <h1>Fun Pick: <%= @fun_hero.name %></h1>
         <img src=<%= @fun_hero.image %>>
