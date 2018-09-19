@@ -35,6 +35,7 @@ gem 'chartjs-ror'
 gem 'chart-js-rails'
 gem 'chartkick'
 gem 'active_model_serializers', '0.10'
+gem 'newrelic_rpm'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
