@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'visiting /' do
   context 'as a visitor' do
-    xit 'can login or create account through steam' do
+    it 'can login or create account through steam' do
       allow_any_instance_of(SteamUserPresenter).to receive(:get_persona).and_return('Boss')
       allow_any_instance_of(SteamUserPresenter).to receive(:get_rank_tier).and_return('Amazing')
       allow_any_instance_of(SteamUserPresenter).to receive(:get_mmr).and_return('10K')
