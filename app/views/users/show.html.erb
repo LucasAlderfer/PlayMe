@@ -64,6 +64,7 @@
 
   <div class='heroes'>
     <div class='stat-pick'>
+      <% @hero = @steam_user.top_heroes.sample %>
       <h1>Stat Pick: <%= @hero.name %></h1>
       <img src=<%= @hero.image %>>
     </div>
