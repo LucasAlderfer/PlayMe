@@ -11,6 +11,6 @@ describe MetricsProcessor do
     mp.make_win_hash
     mp.make_hero_scores
     hero_2 = Hero.first
-    expect(hero_2.default_score).to eq(34)
+    expect(hero_2.default_score).to eq(39)
   end
 end

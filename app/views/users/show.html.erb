@@ -9,24 +9,28 @@
       <p>Rank Tier: <%= @steam_user.rank_tier %></p>
       <p>MMR Estimate: <%= @steam_user.mmr %></p>
     </div>
-    <div class='with-heroes'>
-      <h2>Heroes Already on Your Team</h2>
-    </div>
-    <div class='against-heroes'>
-      <h2>Heroes Already on the opposing Team</h2>
+    <div class='top-hero-stats'>
+      <h2>Statistics for Your Top Heroes</h2>
+      <% @hero = @steam_user.top_heroes.sample %>
+      <%= column_chart api_v1_matchup_path(@hero) %>
     </div>
   </div>
 
   <div class='heroes'>
     <div class='stat-pick'>
-      <% @hero = @steam_user.top_heroes.sample %>
       <h1>Stat Pick: <%= @hero.name %></h1>
       <img src=<%= @hero.image %>>
     </div>
     <div class='fun-pick'>
-      <% @fun_hero = @steam_user.fun_heroes.sample %>
-      <h1>Fun Pick: <%= @fun_hero.name %></h1>
-      <img src=<%= @fun_hero.image %>>
+      <% unless @steam_user.fun_heroes.count == 0 %>
+        <% @fun_hero = @steam_user.fun_heroes.sample %>
+        <h1>Fun Pick: <%= @fun_hero.name %></h1>
+        <img src=<%= @fun_hero.image %>>
+      <% else %>
+        <% @fun_hero = @steam_user.random_heroes.sample %>
+        <h1>Fun Pick: <%= @fun_hero.name %></h1>
+        <img src=<%= @fun_hero.image %>>
+      <% end %>
     </div>
     <div class='random-pick'>
       <% @random_hero = @steam_user.random_heroes.sample %>

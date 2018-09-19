@@ -11,6 +11,7 @@ class SteamUserPresenter
     @rank_tier = get_rank_tier
     @mmr = get_mmr
     @avatar = get_avatar
+    @hero_stats_hash = hero_stats
   end
   def get_persona
     user_setup['profile']['personaname']
@@ -29,14 +30,22 @@ class SteamUserPresenter
   end
 
   def top_heroes
-    top = hero_stats.sort_by { |hero_id, score| score }.reverse[0..9]
-    ids = top.map do |hero|
-      hero[0]
+    top = @hero_stats_hash.sort_by { |hero_id, score| score }.reverse[0..9]
+    @top_heroes = Hero.where(hero_id: top.to_h.keys)
+  end
+
+  def top_heroes_names
+    hero_array = top_heroes
+    hero_array.map do |hero|
+      hero.name
     end
-    heroes = ids.map do |id|
-      Hero.find_by(hero_id: id)
+  end
+
+  def top_heroes_scores
+    hero_array = top_heroes
+    hero_array.map do |hero|
+      @hero_stats_hash[hero.hero_id]
     end
-    heroes
   end
 
   def fun_heroes
@@ -124,7 +133,7 @@ class SteamUserPresenter
   end
 
   def user_heroes_setup
-    request("/api/players/#{id_32}/heroes")
+    request("/api/players/#{id_32}/heroes?api_key=#{ENV['OPEN_DOTA_API_KEY']}")
   end
 
   def make_user_heroes
@@ -138,7 +147,7 @@ class SteamUserPresenter
   end
 
   def user_setup
-    request("/api/players/#{id_32}")
+    @user_setup ||= request("/api/players/#{id_32}?api_key=#{ENV['OPEN_DOTA_API_KEY']}")
   end
 
   def conn

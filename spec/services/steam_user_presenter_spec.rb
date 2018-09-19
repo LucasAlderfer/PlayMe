@@ -6,14 +6,14 @@ describe SteamUserPresenter do
     HeroCreationService.new.make_heroes
     MetricsProcessor.new.make_hero_scores
     steamuser = SteamUserPresenter.new(user)
-    steamuser.heroes
     expect(steamuser).to respond_to(:name)
     expect(steamuser).to respond_to(:steam_id)
     expect(steamuser).to respond_to(:persona)
     expect(steamuser).to respond_to(:rank_tier)
     expect(steamuser).to respond_to(:mmr)
-    expect(steamuser).to respond_to(:heroes)
-    expect(steamuser.heroes.class).to eq(Hash)
-    expect(steamuser.heroes.count).to eq(116)
+    expect(steamuser).to respond_to(:fun_heroes)
+    expect(steamuser).to respond_to(:top_heroes)
+    expect(steamuser).to respond_to(:random_heroes)
+    expect(steamuser.top_heroes.count).to eq(10)
   end
 end
