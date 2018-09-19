@@ -11,13 +11,12 @@
     </div>
     <div class='top-hero-stats'>
       <h2>Statistics for Your Top Heroes</h2>
-      <% @hero = @steam_user.top_heroes.sample %>
-      <%= column_chart api_v1_matchup_path(@hero) %>
     </div>
   </div>
 
   <div class='heroes'>
     <div class='stat-pick'>
+      <% @hero = @steam_user.top_heroes.sample %>
       <h1>Stat Pick: <%= @hero.name %></h1>
       <img src=<%= @hero.image %>>
     </div>
