@@ -1,7 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter 'app/channels/application_cable/channel.rb'
+  add_filter 'app/channels/application_cable/connection.rb'
+  add_filter 'app/jobs/application_job.rb'
+  add_filter 'app/mailers/application_mailer.rb'
+end
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
@@ -10,7 +15,7 @@ require 'rspec/rails'
 require 'database_cleaner'
 OmniAuth.config.test_mode = true
 def stub_steam_auth
-  OmniAuth.config.mock_auth[:default] = OmniAuth::AuthHash.new({
+  OmniAuth.config.mock_auth[:steam] = OmniAuth::AuthHash.new({
     :uid => '123545',
     :info => { :nickname => 'Billy' }
   })
