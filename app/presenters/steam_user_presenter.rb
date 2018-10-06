@@ -139,7 +139,7 @@ class SteamUserPresenter
   end
 
   def user_heroes_setup
-    request("/api/players/#{id_32}/heroes?api_key=#{ENV['OPEN_DOTA_API_KEY']}")
+    request("/api/players/#{id_32}/heroes")
   end
 
   def make_user_heroes
@@ -153,7 +153,7 @@ class SteamUserPresenter
   end
 
   def user_setup
-    @user_setup ||= request("/api/players/#{id_32}?api_key=#{ENV['OPEN_DOTA_API_KEY']}")
+    @user_setup ||= request("/api/players/#{id_32}")
   end
 
   def conn
