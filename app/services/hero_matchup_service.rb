@@ -9,7 +9,7 @@ class HeroMatchupService
   end
 
   def get_hero_matchups(id)
-    request("/api/heroes/#{id}/matchups?api_key=#{ENV['OPEN_DOTA_API_KEY']}")
+    request("/api/heroes/#{id}/matchups")
   end
 
   def update_heroes

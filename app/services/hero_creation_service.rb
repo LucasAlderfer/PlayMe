@@ -47,7 +47,7 @@ class HeroCreationService
   end
 
   def get_hero_stats
-    request("/api/heroStats?api_key=#{ENV['OPEN_DOTA_API_KEY']}")
+    request("/api/heroStats")
   end
 
 end
