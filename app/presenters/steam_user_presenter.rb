@@ -49,7 +49,11 @@ class SteamUserPresenter
   end
 
   def fun_heroes
-    pool_array = Hero.where(hero_id: @fun_settings)
+    unless @fun_settings.nil?
+      pool_array = Hero.where(hero_id: @fun_settings)
+    else
+      pool_array = Hero.all
+    end
     scores = user_win_rate_scores
     score_hash = {}
     scores.each do |score|
