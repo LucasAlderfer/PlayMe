@@ -32,8 +32,8 @@ class MetricsProcessor
 
   def split_pro_pick_array
     sorted_hero_array = hero_pick_array.sort
-    high = sorted_hero_array.pop(50)
-    low = sorted_hero_array.shift(66)
+    high = sorted_hero_array.pop(45)
+    low = sorted_hero_array.shift(72)
     [low, high]
   end
 
@@ -51,7 +51,7 @@ class MetricsProcessor
     pro_8 = low_group.shift(6)
     pro_9 = low_group.shift(6)
     pro_10 = low_group.shift(6)
-    pro_11 = high_group.shift(5)
+    pro_11 = low_group.shift(6)
     pro_12 = high_group.shift(5)
     pro_13 = high_group.shift(5)
     pro_14 = high_group.shift(5)
@@ -91,8 +91,8 @@ class MetricsProcessor
 
   def split_win_rate_array
     sorted_win_rate_array = win_rate_array.sort
-    high = sorted_win_rate_array.pop(24)
-    low = sorted_win_rate_array.shift(92)
+    high = sorted_win_rate_array.pop(21)
+    low = sorted_win_rate_array.shift(96)
     [low, high]
   end
 
@@ -122,7 +122,7 @@ class MetricsProcessor
     win_rate_20 = low_group.shift(4)
     win_rate_21 = low_group.shift(4)
     win_rate_22 = low_group.shift(4)
-    win_rate_23 = high_group.shift(3)
+    win_rate_23 = low_group.shift(4)
     win_rate_24 = high_group.shift(3)
     win_rate_25 = high_group.shift(3)
     win_rate_26 = high_group.shift(3)

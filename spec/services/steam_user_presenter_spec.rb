@@ -17,7 +17,7 @@ describe SteamUserPresenter do
     expect(steamuser.top_heroes.count).to eq(10)
     expect(steamuser.top_heroes_names.count).to eq(10)
     expect(steamuser.top_heroes_scores.count).to eq(10)
-    expect(steamuser.random_heroes.count).to eq(116)
+    expect(steamuser.random_heroes.count).to eq(117)
     expect(steamuser.random_heroes.first.class).to eq(Hero)
     expect(steamuser.fun_heroes.count).to eq(10)
     expect(steamuser.fun_heroes.first.class).to eq(Hero)

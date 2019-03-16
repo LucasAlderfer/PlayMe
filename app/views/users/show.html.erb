@@ -47,7 +47,7 @@
                         ticks: {
                             beginAtZero:false,
                             autoSkip: false,
-                            min: 50
+                            min: <%= @steam_user.top_heroes_scores.min - 5 %>
                         }
                     }],
                     xAxes: [{
