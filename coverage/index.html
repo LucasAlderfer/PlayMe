@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-10-06T18:22:08-06:00">2018-10-06T18:22:08-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-03-16T11:54:22-06:00">2019-03-16T11:54:22-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1558.06
+         1582.51
        </span>
     </span> hits/line)
   </h2>
@@ -137,7 +137,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>9010.4</td>
+        <td>9166.1</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>108</td>
         <td>106</td>
         <td>2</td>
-        <td>287.3</td>
+        <td>289.5</td>
       </tr>
       
       <tr>
@@ -167,7 +167,7 @@
         <td>39</td>
         <td>34</td>
         <td>5</td>
-        <td>137.2</td>
+        <td>138.4</td>
       </tr>
       
       <tr>
@@ -187,7 +187,7 @@
         <td>116</td>
         <td>116</td>
         <td>0</td>
-        <td>2674.3</td>
+        <td>2715.6</td>
       </tr>
       
       <tr>
@@ -197,7 +197,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>123.8</td>
+        <td>124.5</td>
       </tr>
       
     </tbody>
@@ -310,7 +310,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         7155.44
+         7279.08
        </span>
     </span> hits/line)
   </h2>
@@ -352,7 +352,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>9010.4</td>
+        <td>9166.1</td>
       </tr>
       
       <tr>
@@ -535,7 +535,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1174.29
+         1191.42
        </span>
     </span> hits/line)
   </h2>
@@ -567,7 +567,7 @@
         <td>108</td>
         <td>106</td>
         <td>2</td>
-        <td>287.3</td>
+        <td>289.5</td>
       </tr>
       
       <tr>
@@ -577,7 +577,7 @@
         <td>39</td>
         <td>34</td>
         <td>5</td>
-        <td>137.2</td>
+        <td>138.4</td>
       </tr>
       
       <tr>
@@ -597,7 +597,7 @@
         <td>116</td>
         <td>116</td>
         <td>0</td>
-        <td>2674.3</td>
+        <td>2715.6</td>
       </tr>
       
       <tr>
@@ -607,7 +607,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>123.8</td>
+        <td>124.5</td>
       </tr>
       
     </tbody>
@@ -824,7 +824,7 @@
         <li class="missed" data-hits="0" data-linenumber="9">
           
           
-          <code class="ruby">    redirect_to user_path(user)</code>
+          <code class="ruby">    redirect_to dashboard_path</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="10">
@@ -976,7 +976,7 @@
         <li class="missed" data-hits="0" data-linenumber="4">
           
           
-          <code class="ruby">    user = User.find(params[:id])</code>
+          <code class="ruby">    user = User.find(session[:user_id])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="5">
@@ -1505,8 +1505,8 @@
           <code class="ruby">  def total_picks</code>
         </li>
       
-        <li class="covered" data-hits="81089" data-linenumber="44">
-          <span class="hits">81089</span>
+        <li class="covered" data-hits="82490" data-linenumber="44">
+          <span class="hits">82490</span>
           
           <code class="ruby">    one_pick + two_pick + three_pick + four_pick + five_pick</code>
         </li>
@@ -1529,8 +1529,8 @@
           <code class="ruby">  def win_rate</code>
         </li>
       
-        <li class="covered" data-hits="81084" data-linenumber="48">
-          <span class="hits">81084</span>
+        <li class="covered" data-hits="82485" data-linenumber="48">
+          <span class="hits">82485</span>
           
           <code class="ruby">    (((one_win + two_win + three_win + four_win + five_win) / total_picks) * 100).round(2)</code>
         </li>
@@ -1553,8 +1553,8 @@
           <code class="ruby">  def total_pro_participation</code>
         </li>
       
-        <li class="covered" data-hits="81084" data-linenumber="52">
-          <span class="hits">81084</span>
+        <li class="covered" data-hits="82485" data-linenumber="52">
+          <span class="hits">82485</span>
           
           <code class="ruby">    pro_pick + pro_ban</code>
         </li>
@@ -2029,8 +2029,8 @@
           <code class="ruby">      pool_array.each do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="26912" data-linenumber="61">
-          <span class="hits">26912</span>
+        <li class="covered" data-hits="27144" data-linenumber="61">
+          <span class="hits">27144</span>
           
           <code class="ruby">        if hero.hero_id == score.id.to_i</code>
         </li>
@@ -2545,8 +2545,8 @@
           <code class="ruby">    user_heroes_setup.inject([]) do |array, hero|</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="147">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="147">
+          <span class="hits">351</span>
           
           <code class="ruby">      array &lt;&lt; UserHero.new(hero)</code>
         </li>
@@ -2720,140 +2720,140 @@
           <code class="ruby">    hero_array.each do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="6">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="6">
+          <span class="hits">234</span>
           
           <code class="ruby">      hero_id = hero[&#39;id&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="7">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="7">
+          <span class="hits">234</span>
           
           <code class="ruby">      icon = &#39;https://api.opendota.com&#39; + hero[&#39;icon&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="8">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="8">
+          <span class="hits">234</span>
           
           <code class="ruby">      image = &#39;https://api.opendota.com&#39; + hero[&#39;img&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="9">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="9">
+          <span class="hits">234</span>
           
           <code class="ruby">      name = hero[&#39;localized_name&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="10">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="10">
+          <span class="hits">234</span>
           
           <code class="ruby">      roles = hero[&#39;roles&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="11">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="11">
+          <span class="hits">234</span>
           
           <code class="ruby">      pro_pick = hero[&#39;pro_pick&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="12">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="12">
+          <span class="hits">234</span>
           
           <code class="ruby">      pro_win = hero[&#39;pro_win&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="13">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="13">
+          <span class="hits">234</span>
           
           <code class="ruby">      pro_ban = hero[&#39;pro_ban&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="14">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="14">
+          <span class="hits">234</span>
           
           <code class="ruby">      one_pick = hero[&#39;1_pick&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="15">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="15">
+          <span class="hits">234</span>
           
           <code class="ruby">      one_win = hero[&#39;1_win&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="16">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="16">
+          <span class="hits">234</span>
           
           <code class="ruby">      two_pick = hero[&#39;2_pick&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="17">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="17">
+          <span class="hits">234</span>
           
           <code class="ruby">      two_win = hero[&#39;2_win&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="18">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="18">
+          <span class="hits">234</span>
           
           <code class="ruby">      three_pick = hero[&#39;3_pick&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="19">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="19">
+          <span class="hits">234</span>
           
           <code class="ruby">      three_win = hero[&#39;3_win&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="20">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="20">
+          <span class="hits">234</span>
           
           <code class="ruby">      four_pick = hero[&#39;4_pick&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="21">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="21">
+          <span class="hits">234</span>
           
           <code class="ruby">      four_win = hero[&#39;4_win&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="22">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="22">
+          <span class="hits">234</span>
           
           <code class="ruby">      five_pick = hero[&#39;5_pick&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="23">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="23">
+          <span class="hits">234</span>
           
           <code class="ruby">      five_win = hero[&#39;5_win&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="24">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="24">
+          <span class="hits">234</span>
           
           <code class="ruby">      if Hero.find_by(hero_id: hero_id).nil?</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="25">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="25">
+          <span class="hits">234</span>
           
           <code class="ruby">        hero = Hero.create(hero_id: hero_id, name: name, image: image, roles: roles, icon: icon, pro_pick: pro_pick, pro_win: pro_win, pro_ban: pro_ban, one_pick: one_pick, one_win: one_win, two_pick: two_pick, two_win: two_win, three_pick: three_pick, three_win: three_win, four_pick: four_pick, four_win: four_win, five_pick: five_pick, five_win: five_win)</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="26">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="26">
+          <span class="hits">234</span>
           
           <code class="ruby">        hero.update(pro_pick: 0) if hero.pro_pick == nil</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="27">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="27">
+          <span class="hits">234</span>
           
           <code class="ruby">        hero.update(pro_win: 0) if hero.pro_win == nil</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="28">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="28">
+          <span class="hits">234</span>
           
           <code class="ruby">        hero.update(pro_ban: 0) if hero.pro_ban == nil</code>
         </li>
@@ -3298,14 +3298,14 @@
           <code class="ruby">    @heroes.each do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="14">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="14">
+          <span class="hits">234</span>
           
           <code class="ruby">      score = (@pro_hash[hero.id]) + (@win_hash[hero.id])</code>
         </li>
       
-        <li class="covered" data-hits="232" data-linenumber="15">
-          <span class="hits">232</span>
+        <li class="covered" data-hits="234" data-linenumber="15">
+          <span class="hits">234</span>
           
           <code class="ruby">      hero.update(default_score: score)</code>
         </li>
@@ -3382,14 +3382,14 @@
           <code class="ruby">  def hero_pick_array</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="28">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="28">
+          <span class="hits">702</span>
           
           <code class="ruby">    @heroes.map do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="80736" data-linenumber="29">
-          <span class="hits">80736</span>
+        <li class="covered" data-hits="82134" data-linenumber="29">
+          <span class="hits">82134</span>
           
           <code class="ruby">      hero.total_pro_participation</code>
         </li>
@@ -3418,26 +3418,26 @@
           <code class="ruby">  def split_pro_pick_array</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="34">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="34">
+          <span class="hits">702</span>
           
           <code class="ruby">    sorted_hero_array = hero_pick_array.sort</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="35">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="35">
+          <span class="hits">702</span>
           
-          <code class="ruby">    high = sorted_hero_array.pop(50)</code>
+          <code class="ruby">    high = sorted_hero_array.pop(45)</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="36">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="36">
+          <span class="hits">702</span>
           
-          <code class="ruby">    low = sorted_hero_array.shift(66)</code>
+          <code class="ruby">    low = sorted_hero_array.shift(72)</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="37">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="37">
+          <span class="hits">702</span>
           
           <code class="ruby">    [low, high]</code>
         </li>
@@ -3460,146 +3460,146 @@
           <code class="ruby">  def make_pro_pick_groups</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="41">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="41">
+          <span class="hits">351</span>
           
           <code class="ruby">    low_group = split_pro_pick_array[0]</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="42">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="42">
+          <span class="hits">351</span>
           
           <code class="ruby">    high_group = split_pro_pick_array[1]</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="43">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="43">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_0 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="44">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="44">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_1 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="45">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="45">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_2 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="46">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="46">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_3 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="47">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="47">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_4 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="48">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="48">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_5 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="49">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="49">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_6 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="50">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="50">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_7 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="51">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="51">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_8 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="52">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="52">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_9 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="53">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="53">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_10 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="54">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="54">
+          <span class="hits">351</span>
           
-          <code class="ruby">    pro_11 = high_group.shift(5)</code>
+          <code class="ruby">    pro_11 = low_group.shift(6)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="55">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="55">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_12 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="56">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="56">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_13 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="57">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="57">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_14 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="58">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="58">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_15 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="59">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="59">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_16 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="60">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="60">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_17 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="61">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="61">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_18 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="62">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="62">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_19 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="63">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="63">
+          <span class="hits">351</span>
           
           <code class="ruby">    pro_20 = high_group.shift(5)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="64">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="64">
+          <span class="hits">351</span>
           
           <code class="ruby">    [pro_0, pro_1, pro_2, pro_3, pro_4, pro_5, pro_6, pro_7, pro_8, pro_9, pro_10, pro_11, pro_12, pro_13, pro_14, pro_15, pro_16, pro_17, pro_18, pro_19, pro_20]</code>
         </li>
@@ -3622,32 +3622,32 @@
           <code class="ruby">  def assign_pro_group_points</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="68">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="68">
+          <span class="hits">351</span>
           
           <code class="ruby">    score_hash = {}</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="69">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="69">
+          <span class="hits">351</span>
           
           <code class="ruby">    points = 0</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="70">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="70">
+          <span class="hits">351</span>
           
           <code class="ruby">    make_pro_pick_groups.each do |group|</code>
         </li>
       
-        <li class="covered" data-hits="7308" data-linenumber="71">
-          <span class="hits">7308</span>
+        <li class="covered" data-hits="7371" data-linenumber="71">
+          <span class="hits">7371</span>
           
           <code class="ruby">      group.each do |score|</code>
         </li>
       
-        <li class="covered" data-hits="40368" data-linenumber="72">
-          <span class="hits">40368</span>
+        <li class="covered" data-hits="41067" data-linenumber="72">
+          <span class="hits">41067</span>
           
           <code class="ruby">        score_hash[score] = points</code>
         </li>
@@ -3658,8 +3658,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="7308" data-linenumber="74">
-          <span class="hits">7308</span>
+        <li class="covered" data-hits="7371" data-linenumber="74">
+          <span class="hits">7371</span>
           
           <code class="ruby">      points += 1</code>
         </li>
@@ -3670,8 +3670,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="76">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="76">
+          <span class="hits">351</span>
           
           <code class="ruby">    score_hash</code>
         </li>
@@ -3700,14 +3700,14 @@
           <code class="ruby">    @heroes.each do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="81">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="81">
+          <span class="hits">351</span>
           
           <code class="ruby">      score = assign_pro_group_points[hero.total_pro_participation]</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="82">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="82">
+          <span class="hits">351</span>
           
           <code class="ruby">      @pro_hash[hero.id] = score</code>
         </li>
@@ -3736,14 +3736,14 @@
           <code class="ruby">  def win_rate_array</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="87">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="87">
+          <span class="hits">702</span>
           
           <code class="ruby">    @heroes.map do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="80736" data-linenumber="88">
-          <span class="hits">80736</span>
+        <li class="covered" data-hits="82134" data-linenumber="88">
+          <span class="hits">82134</span>
           
           <code class="ruby">      hero.win_rate</code>
         </li>
@@ -3772,26 +3772,26 @@
           <code class="ruby">  def split_win_rate_array</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="93">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="93">
+          <span class="hits">702</span>
           
           <code class="ruby">    sorted_win_rate_array = win_rate_array.sort</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="94">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="94">
+          <span class="hits">702</span>
           
-          <code class="ruby">    high = sorted_win_rate_array.pop(24)</code>
+          <code class="ruby">    high = sorted_win_rate_array.pop(21)</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="95">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="95">
+          <span class="hits">702</span>
           
-          <code class="ruby">    low = sorted_win_rate_array.shift(92)</code>
+          <code class="ruby">    low = sorted_win_rate_array.shift(96)</code>
         </li>
       
-        <li class="covered" data-hits="696" data-linenumber="96">
-          <span class="hits">696</span>
+        <li class="covered" data-hits="702" data-linenumber="96">
+          <span class="hits">702</span>
           
           <code class="ruby">    [low, high]</code>
         </li>
@@ -3814,206 +3814,206 @@
           <code class="ruby">  def make_win_rate_groups</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="100">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="100">
+          <span class="hits">351</span>
           
           <code class="ruby">    low_group = split_win_rate_array[0]</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="101">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="101">
+          <span class="hits">351</span>
           
           <code class="ruby">    high_group = split_win_rate_array[1]</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="102">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="102">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_0 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="103">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="103">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_1 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="104">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="104">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_2 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="105">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="105">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_3 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="106">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="106">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_4 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="107">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="107">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_5 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="108">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="108">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_6 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="109">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="109">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_7 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="110">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="110">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_8 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="111">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="111">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_9 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="112">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="112">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_10 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="113">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="113">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_11 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="114">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="114">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_12 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="115">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="115">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_13 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="116">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="116">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_14 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="117">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="117">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_15 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="118">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="118">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_16 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="119">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="119">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_17 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="120">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="120">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_18 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="121">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="121">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_19 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="122">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="122">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_20 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="123">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="123">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_21 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="124">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="124">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_22 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="125">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="125">
+          <span class="hits">351</span>
           
-          <code class="ruby">    win_rate_23 = high_group.shift(3)</code>
+          <code class="ruby">    win_rate_23 = low_group.shift(4)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="126">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="126">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_24 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="127">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="127">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_25 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="128">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="128">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_26 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="129">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="129">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_27 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="130">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="130">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_28 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="131">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="131">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_29 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="132">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="132">
+          <span class="hits">351</span>
           
           <code class="ruby">    win_rate_30 = high_group.shift(3)</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="133">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="133">
+          <span class="hits">351</span>
           
           <code class="ruby">    [win_rate_0, win_rate_1, win_rate_2, win_rate_3, win_rate_4, win_rate_5, win_rate_6, win_rate_7, win_rate_8, win_rate_9, win_rate_10, win_rate_11, win_rate_12, win_rate_13, win_rate_14, win_rate_15, win_rate_16, win_rate_17, win_rate_18, win_rate_19, win_rate_20, win_rate_21, win_rate_22, win_rate_23, win_rate_24, win_rate_25, win_rate_26, win_rate_27, win_rate_28, win_rate_29, win_rate_30]</code>
         </li>
@@ -4036,32 +4036,32 @@
           <code class="ruby">  def assign_win_rate_group_points</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="137">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="137">
+          <span class="hits">351</span>
           
           <code class="ruby">    score_hash = {}</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="138">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="138">
+          <span class="hits">351</span>
           
           <code class="ruby">    points = 0</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="139">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="139">
+          <span class="hits">351</span>
           
           <code class="ruby">    make_win_rate_groups.each do |group|</code>
         </li>
       
-        <li class="covered" data-hits="10788" data-linenumber="140">
-          <span class="hits">10788</span>
+        <li class="covered" data-hits="10881" data-linenumber="140">
+          <span class="hits">10881</span>
           
           <code class="ruby">      group.each do |score|</code>
         </li>
       
-        <li class="covered" data-hits="40368" data-linenumber="141">
-          <span class="hits">40368</span>
+        <li class="covered" data-hits="41067" data-linenumber="141">
+          <span class="hits">41067</span>
           
           <code class="ruby">        score_hash[score] = points</code>
         </li>
@@ -4072,8 +4072,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="10788" data-linenumber="143">
-          <span class="hits">10788</span>
+        <li class="covered" data-hits="10881" data-linenumber="143">
+          <span class="hits">10881</span>
           
           <code class="ruby">      points += 1</code>
         </li>
@@ -4084,8 +4084,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="145">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="145">
+          <span class="hits">351</span>
           
           <code class="ruby">    score_hash</code>
         </li>
@@ -4114,14 +4114,14 @@
           <code class="ruby">    @heroes.each do |hero|</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="150">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="150">
+          <span class="hits">351</span>
           
           <code class="ruby">      score = assign_win_rate_group_points[hero.win_rate]</code>
         </li>
       
-        <li class="covered" data-hits="348" data-linenumber="151">
-          <span class="hits">348</span>
+        <li class="covered" data-hits="351" data-linenumber="151">
+          <span class="hits">351</span>
           
           <code class="ruby">      @win_hash[hero.id] = score</code>
         </li>
@@ -4193,26 +4193,26 @@
           <code class="ruby">  def initialize(hero)</code>
         </li>
       
-        <li class="covered" data-hits="349" data-linenumber="6">
-          <span class="hits">349</span>
+        <li class="covered" data-hits="352" data-linenumber="6">
+          <span class="hits">352</span>
           
           <code class="ruby">    @id = hero[&#39;hero_id&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="349" data-linenumber="7">
-          <span class="hits">349</span>
+        <li class="covered" data-hits="352" data-linenumber="7">
+          <span class="hits">352</span>
           
           <code class="ruby">    @hero = hero</code>
         </li>
       
-        <li class="covered" data-hits="349" data-linenumber="8">
-          <span class="hits">349</span>
+        <li class="covered" data-hits="352" data-linenumber="8">
+          <span class="hits">352</span>
           
           <code class="ruby">    @games = hero[&#39;games&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="349" data-linenumber="9">
-          <span class="hits">349</span>
+        <li class="covered" data-hits="352" data-linenumber="9">
+          <span class="hits">352</span>
           
           <code class="ruby">    @score = 0</code>
         </li>
@@ -4241,8 +4241,8 @@
           <code class="ruby">    unless @games == 0</code>
         </li>
       
-        <li class="covered" data-hits="295" data-linenumber="14">
-          <span class="hits">295</span>
+        <li class="covered" data-hits="298" data-linenumber="14">
+          <span class="hits">298</span>
           
           <code class="ruby">      (((@hero[&#39;win&#39;]).to_f/@hero[&#39;games&#39;]) * 100).round(2)</code>
         </li>
@@ -4253,8 +4253,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="54" data-linenumber="16">
-          <span class="hits">54</span>
+        <li class="covered" data-hits="51" data-linenumber="16">
+          <span class="hits">51</span>
           
           <code class="ruby">      0</code>
         </li>

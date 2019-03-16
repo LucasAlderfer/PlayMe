@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :new, :show, :update] do
     get '/settings', to: 'settings#show'
   end
+  get '/dashboard', to: 'users#show'
   get '/explanations', to: 'explanations#show'
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/:provider/callback', to: 'sessions#create'

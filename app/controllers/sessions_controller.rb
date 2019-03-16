@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_uid(auth['uid']) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
     flash[:notice] = "Signed In As #{user.name}"
-    redirect_to user_path(user)
+    redirect_to dashboard_path
   end
 
   def destroy
